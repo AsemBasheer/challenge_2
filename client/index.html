@@ -1,2 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON -> CSV</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
 
+<body>
+    <div class="d-flex justify-content-center">
+        <div class="container m-4 tic">
+            <div class="row header">
+                <div class="col-sm">
+                    <h2>
+                        JSON -> CSV
+                    </h2>
+                    <h4 id="playerTurn">
+                    </h4>
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <textarea name="json" id="json" cols="20" rows="10" placeholder="Insert JSON here"></textarea>
+                    </div>
+                    <div class="col">
+                        <button class="w3-button w3-red">>> convert >></button>
+                    </div>
+                    <div class="col">
+                        <textarea name="csv" id="csv" cols="20" rows="10" placeholder="CSV output ..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+body {
+    background-color: black;
+}
+
+.container {
+    background-color: gray;
+}
+
+.odd {
+    background-color: darkgray;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    text-align: center;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18rem;
+}
+
+.tic {
+    width: 50rem;
+}
+
+.Player1 {
+    background-image: url('X.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.Player2 {
+    background-image: url('O.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.h-15 {
+    height: 100px;
+}
