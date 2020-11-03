@@ -6,7 +6,7 @@ app.use(express.static(__dirname + '/./client'))
 app.use(express.json())
 
 app.post('/', function (req, res) {
-    console.log(req.body)
+    // console.log(req.body)
     let data = []
     data.push(req.body)
     let result = arrayToCSV(data)
@@ -20,7 +20,7 @@ app.listen(port, function () {
 });
 
 function arrayToCSV(data) {
-    csv = data.map(row => Object.values(row));
+    let csv = data.map(row => Object.values(row));
     csv.unshift(Object.keys(data[0]));
     return `"${csv.join('"\n"').replace(/,/g, '","')}"`;
 }
