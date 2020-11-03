@@ -7,8 +7,10 @@ app.use(express.json())
 
 app.post('/', function (req, res) {
     console.log(req.body)
-
-    res.send(">>csv>>")
+    let data = []
+    data.push(req.body)
+    let result = arrayToCSV(data)
+    res.send(result)
 });
 
 let port = 3000;
@@ -18,9 +20,7 @@ app.listen(port, function () {
 });
 
 function arrayToCSV(data) {
-    csv = Object.values(data)
-    console.log("csv", csv)
-    console.log("keys 0", Object.keys(data[0]))
+    csv = data.map(row => Object.values(row));
     csv.unshift(Object.keys(data[0]));
     return `"${csv.join('"\n"').replace(/,/g, '","')}"`;
 }
