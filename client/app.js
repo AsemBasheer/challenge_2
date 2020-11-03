@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const csv = document.querySelector('#csv')
     const convert = document.querySelector('#convert')
     convert.addEventListener('click', () => {
-        console.log("click", json.value)
+        // console.log("click", json.value)
         loadXMLDoc()
     })
     const clear = document.querySelector('#clear')
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == XMLHttpRequest.DONE) {
                 if (xmlhttp.status == 200) {
-                    console.log(xmlhttp.responseText)
+                    // console.log(xmlhttp.responseText)
                     csv.innerHTML = xmlhttp.responseText;
                 }
                 else if (xmlhttp.status == 400) {
