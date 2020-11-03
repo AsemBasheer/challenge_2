@@ -5,12 +5,22 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static(__dirname + '/./client'))
 app.use(express.json())
 
-app.post('/', function (req, res) {
+app.post('/xml', function (req, res) {
     // console.log(req.body)
     let data = []
     data.push(req.body)
     let result = arrayToCSV(data)
-    console.log("result >>>>", result)
+    // console.log("result >>>>", result)
+    res.send(`${result.join('\n').replace(/,/g, ',')}`)
+});
+
+app.post('/', function (req, res) {
+    let data = []
+    data.push(req.body)
+    console.log(req.body)
+    let result = arrayToCSV(data)
+    console.log("result >>>>", data)
+    // res.end()
     res.send(`${result.join('\n').replace(/,/g, ',')}`)
 });
 
@@ -24,7 +34,7 @@ function arrayToCSV(data) {
     let csv = data.map(row => Object.values(row));
     let child = csv[0][csv[0].length - 1]
     csv[0].pop()
-    console.log(">>>rec", child.length)
+    // console.log(">>>rec", child.length)
     if (Array.isArray(child) && child.length > 0) {
         for (let i = 0; i < child.length; i++) {
             let rec = []
