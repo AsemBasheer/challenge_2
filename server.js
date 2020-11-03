@@ -11,7 +11,7 @@ app.post('/', function (req, res) {
     data.push(req.body)
     let result = arrayToCSV(data)
     console.log("result >>>>", result)
-    res.send(`"${result.join('"\n"').replace(/,/g, '","')}"`)
+    res.send(`${result.join('\n').replace(/,/g, ',')}`)
 });
 
 let port = 3000;
